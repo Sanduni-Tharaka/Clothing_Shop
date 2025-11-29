@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    background: #9f8888;
     color: #333;
 }
 
@@ -233,7 +233,7 @@ header {
 }
 
 .modal-content {
-    background: white;
+    background: rgb(175, 135, 135);
     padding: 30px;
     border-radius: 10px;
     max-width: 500px;
