@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionRack POS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FashionRack POS</h1>
+            <button id="newSale" class="btn">New Sale</button>
+        </header>
+
+        <div class="product-management">
+            <h3>Add New Product</h3>
+            <div class="simple-form">
+                <input type="text" id="newProductName" placeholder="Product Name">
+                <input type="number" id="newProductPrice" placeholder="Price in LKR" step="0.01">
+                <select id="newProductCategory">
+                    <option value="shirts">Shirts</option>
+                    <option value="pants">Pants</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+                <button onclick="addNewProduct()">Add Product</button>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="shirts">Shirts</button>
+                <button class="category-btn" data-category="pants">Pants</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+            </div>
+
+            <div class="products" id="products">
+            </div>
+
+            <div class="cart">
+                <h3>Current Order</h3>
+                <div class="cart-items" id="cartItems">
+                    <p class="empty">Cart is empty</p>
+                </div>
+                
+                <div class="cart-total">
+                    <div class="total-line">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">Rs. 0.00</span>
+                    </div>
+                    <div class="discount">
+                        <input type="number" id="discount" placeholder="Discount %" min="0" max="100">
+                        <button id="applyDiscount">Apply</button>
+                    </div>
+                    <div class="total-line">
+                        <span>Discount:</span>
+                        <span id="discountValue">Rs. 0.00</span>
+                    </div>
+                    <div class="total-line grand-total">
+                        <span>Total:</span>
+                        <span id="total">Rs. 0.00</span>
+                    </div>
+                    <button id="checkout" class="checkout-btn">Complete Sale</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <h2>Receipt</h2>
+            <div id="receiptContent"></div>
+            <button id="closeReceipt">Close</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
